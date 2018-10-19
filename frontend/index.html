@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Welcome</title>
+    <link rel="stylesheet" href="./css/login.css">
+    <script src="./js/login.js"></script>
+    <script src="../../gs/greensock-js/src/minified/TweenMax.min.js"></script>
+    <meta name="viewport" content="width=device-width", initial=scale=1.0">
+    
+</head>
+<body>
+    <div class="full-container-wrapper">
+        <div class="title">
+            <h1>Welcome to Pathfinder</h1>
+            <h4>Your personal career path assistant</h4>
+        </div>
+        <div class="container">
+            <button class="login" onclick="toggleLogin()">Login</button>
+            <div class="loginFields" id="loginFields" style="display:none;">
+                <form action="" id="loginForm" style="opacity: 0.0">
+                    Email<br>
+                    <input type="text" name="username" placeholder="Enter Email">
+                    <br>
+                    Password<br>
+                    <input type="password" name="password" placeholder="Enter Password">
+                    <br>
+                    <button class="submit">Submit</button>
+                    <br>
+                    <a href="pwrecovery">Forgot Password?</a>
+                </form>
+            </div>
+        </div>
+        <div class="container">
+            <p> or </p>
+        </div>
+        <div class="container">
+            <button class="signUp" onclick="toggleSignUp()">Sign Up</button>
+            <div class="signUpFields" id="signUpFields" style="display:none;">
+                <form action="" id="signUpForm" style="opacity: 0.0">
+                    First Name<br>
+                    <input type="text" name="fname" placeholder="First Name">
+                    <br>
+                    Last Name<br>
+                    <input type="text" name="lname" placeholder="Last Name">
+                    <br>
+                    Email<br>
+                    <input type="text" name="email" placeholder="Email">
+                    <br>
+                    Password<br>
+                    <input type="password" name="signUpPassword" placeholder="Password">
+                    <br>
+                    Verify Password<br>
+                    <input type="password" name="verifyPassword" placeholder="Verify Password">
+                    <br>
+                    <button class="submit">Submit</button>
+                </form>
+
+
+        
+        
+    </div>
+</body>
+
