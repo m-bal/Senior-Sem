@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Home</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+  <link rel="stylesheet" href="./data.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+  <script src="https://cdn.plot.ly/plotly-latest.js" charset="utf-8"></script>
+  <style>
+  .fakeimg {
+      height: 200px;
+      background: #fff;
+  }
+  </style>
+</head>
+<body style="background: #eee">
+
+<div class="jumbotron text-center" style="margin-bottom:0; background-image: url(../../blue_network.jpg); background-size: cover;">
+  <h1 style="color: #eee;">Pathfinder</h1>
+  <p></p> 
+</div>
+
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+  <a class="navbar-brand" href="../home.html">Home</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="#">Career News</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Social Boards</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Games</a>
+      </li>
+      <li class="nav-item">
+          <a class="nav-link" href="#">About</a>
+      </li>
+    </ul>
+    <ul class="navbar-nav">  
+    <li class="nav-item">
+        <a class="nav-link" href="#">Account</a>
+      </li>
+    </ul>    
+  </div>  
+</nav>
+
+<div class="container" style="margin-top:30px; background: #aaa;">
+  <div class="row">
+    <div class="col-sm-4">
+        <br>
+        <ul class="nav nav-pills flex-column">
+        <li class="nav-item">
+            <a class="nav-link active" href="./personal">Personal Settings</a>
+        </li>
+        <li class="nav-item"><!--spacing-->
+            <br>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link active" href="./career">Career Settings</a>
+        </li>
+        <li class="nav-item"><!--spacing-->
+            <br>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link active" href="./privacy">Privacy Settings</a>
+        </li>
+        </ul>
+        <br>
+    </div>
+    <div class="col-sm-8" style="margin-top:30px;">
+        <center><h4>Data Entry</h4> </center>
+        <br>
+        <h5>Average grades in...</h5>
+        <hr>
+        <form method="post" id="grades">
+            <p class="category">Maths</p>
+            <p class="category">Sciences</p>
+            <select name="maths" class="inputOptionLeft">
+                <option value="A">A</option>
+                <option value="B">B</option>
+                <option value="C">C</option>
+                <option value="D">D</option>
+                <option value="F">F</option>
+                <option value="NA">N/A</option>
+            </select>
+            <select name="Sciences" class="inputOptionRight">
+                <option value="A">A</option>
+                <option value="B">B</option>
+                <option value="C">C</option>
+                <option value="D">D</option>
+                <option value="F">F</option>
+                <option value="NA">N/A</option>
+            </select>
+            <br>
+            <br> 
+            <p class="category">English</p>
+            <p class="category">History</p>
+            <select name="English" class="inputOptionLeft">
+                <option value="A">A</option>
+                <option value="B">B</option>
+                <option value="C">C</option>
+                <option value="D">D</option>
+                <option value="F">F</option>
+                <option value="NA">N/A</option>
+            </select>
+            <select name="History" class="inputOptionRight">
+                <option value="A">A</option>
+                <option value="B">B</option>
+                <option value="C">C</option>
+                <option value="D">D</option>
+                <option value="F">F</option>
+                <option value="NA">N/A</option>
+            </select>
+            <br>
+            <br> 
+            <p class="category">Physical Education</p>
+            <p class="category">Performing Arts</p>
+            <select name="English" class="inputOptionLeft">
+                <option value="A">A</option>
+                <option value="B">B</option>
+                <option value="C">C</option>
+                <option value="D">D</option>
+                <option value="F">F</option>
+                <option value="NA">N/A</option>
+            </select>
+            <select name="History" class="inputOptionRight">
+                <option value="A">A</option>
+                <option value="B">B</option>
+                <option value="C">C</option>
+                <option value="D">D</option>
+                <option value="F">F</option>
+                <option value="NA">N/A</option>
+            </select>
+        </form> 
+        <br>
+        <br>
+        <h4>Hobbies</h5>
+        <hr>
+        <form method="post" id="hobbies">
+            <p class="category">Your primary hobby</p>
+            <p class="category">Your secondary hobby</p>
+            <select name="maths" class="inputOptionLeft">
+                <option value="hobby1">hobby1</option>
+                <option value="hobby2">hobby2</option>
+                <option value="hobby3">hobby3</option>
+                <option value="hobby4">hobby4</option>
+                <option value="hobby5">hobby5</option>
+                <option value="hobby6">hobb6</option>
+            </select>
+            <select name="maths" class="inputOptionLeft">
+                <option value="hobby1">hobby1</option>
+                <option value="hobby2">hobby2</option>
+                <option value="hobby3">hobby3</option>
+                <option value="hobby4">hobby4</option>
+                <option value="hobby5">hobby5</option>
+                <option value="hobby6">hobby6</option>
+            </select>
+            <br>
+            <br> 
+            <p class="category">How proficient are you?</p>
+            <br>
+            <select name="English" class="inputOptionLeft">
+                <option value="vp">Very proficient</option>
+                <option value="mp">Mildly proficient</option>
+                <option value="np">Not very proficient, but I think it's fun</option>
+                <option value="NA">N/A</option>
+            </select>
+            <select name="History" class="inputOptionRight">
+                <option value="vp">Very proficient</option>
+                <option value="mp">Mildly proficient</option>
+                <option value="np">Not very proficient, but I think it's fun</option>
+                <option value="NA">N/A</option>
+            </select>
+        </form>
+        <br>
+        <br>
+        <button type="button" onclick="submitForms()">Save</button> 
+        <br>
+        <br>
+    </div>
+  </div>
+</div>
+<div class="jumbotron text-center" style="margin-bottom:0">
+  <p>Footer</p>
+</div>
+
+</body>
+<script>
+
+    submitForms = function() {
+        
+        document.getElementById("grades").submit();
+        document.getElementById("hobbies").submit();
+
+    }
+
+</script>
+</html>
+

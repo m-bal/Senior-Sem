@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width", initial=scale=1.0">
+    <title>Welcome</title>
+    <link rel="stylesheet" href="./css/login.css">
+    <script src="./js/login.js"></script>
+    <script src="../../gs/greensock-js/src/minified/TweenMax.min.js"></script>
+    
+</head>
+<body>
+    <div id="particles-js">
+        <div class="ttext">
+            <h1>Welcome to Pathfinder</h1>
+            <h4>Your personal career path assistant</h4>
+        </div>
+        <div class="btns">
+            <button class="loginbtn" onclick="toggleLogin()">Login</button>
+            <div class="loginFields" id="loginFields" style="display:none;">
+                <form class="loginForm" action="" id="loginForm" style="opacity:0.0">
+                    Email<br>
+                    <input type="text" name="username" placeholder="Enter Email">
+                    <br>
+                    Password<br>
+                    <input type="password" name="password" placeholder="Enter Password">
+                    <br>
+                    <br>
+                    <button class="submit">Submit</button>
+                    <br>
+                    <br>
+                    <a href="pwrecovery">Forgot Password?</a>
+                </form>
+            </div> 
+            <br>
+            <p class="btext" id="btext">or</p>
+            <br>
+            <button class="signupbtn" onclick="toggleSignUp()">Sign Up</button>
+			 <div class="signUpFields" id="signUpFields" style="display:none;">
+                <form class="signUpForm" action="" id="signUpForm" style="opacity: 0.0">
+                    First Name<br>
+                    <input type="text" name="fname" placeholder="First Name">
+                    <br>
+                    Last Name<br>
+                    <input type="text" name="lname" placeholder="Last Name">
+                    <br>
+                    Email<br>
+                    <input type="text" name="email" placeholder="Email">
+                    <br>
+                    Password<br>
+                    <input type="password" name="signUpPassword" placeholder="Password">
+                    <br>
+                    Verify Password<br>
+                    <input type="password" name="verifyPassword" placeholder="Verify Password">
+                    <br>
+                    <br>
+                    <button class="submit">Submit</button>
+                </form>
+                </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="./js/particles.js"></script>
+    <script type="text/javascript" src="./js/app.js"></script>
+</body>
+
