@@ -1,0 +1,28 @@
+.innerMenu {
+
+    box-shadow: -5px, -5px, 50px;
+
+
+}
+
+.category {
+
+    display: inline-block;
+    width: 48%;
+    padding: 1%;
+
+}
+
+.inputOptionLeft {
+
+    display: inline-block;
+    width: 25%;
+    margin: 0 23% 0 0;
+
+}
+
+.inputOptionRight
+{
+    width: 25%;
+
+}
