@@ -1,0 +1,59 @@
+<div class="container" style="margin-top:30px; background: #aaa;">
+  <div class="row">
+    <div class="col-sm-4">
+        <br>
+        <ul class="nav nav-pills flex-column">
+        <li class="nav-item">
+            <button type="button" onclick="loadPersonalSettings()" class="settingsButton">Personal Settings</button>
+        </li>
+        <li class="nav-item"><!--spacing-->
+            <br>
+        </li>
+        <li class="nav-item">
+            <button type="button" onclick="loadCareerSettings()" class="settingsButton">Career Settings</button>
+        </li>
+        <li class="nav-item"><!--spacing-->
+            <br>
+        </li>
+        <li class="nav-item">
+            <button type="button" onclick="loadPrivacySettings()" class="settingsButton">Privacy Settings</button>
+        </li>
+        </ul>
+        <br>
+    </div>
+    <div class="col-sm-8" style="margin-top:30px;">
+        <center><h4>Personal Settings</h4> </center>
+        <br>
+        <h5>Name</h5>
+        <hr>
+        <form method="post" id="name">
+            <p class="category">First Name:</p>
+            <p class="category">Last Name:</p>
+            <input type="text" name="firstname" placeholder="First Name" class="inputOptionLeft">
+            <input type="text" name="lastname" placeholder="Last Name" class="inputOptionRight">
+        </form> 
+        <br>
+        <br>
+        <h5>Location</h5>
+        <hr>
+        <form method="post" id="location">
+            <p class="category">City:</p>
+            <p class="category">State:</p>
+            <input type="text" name="city" placeholder="City" class="inputOptionLeft">
+            <input type="text" name="state" placeholder="State" class="inputOptionRight">
+            <p class="category">Zip Code:</p>
+            <br>
+            <input type="text" name="zip" placeholder="Zip" class="inputOptionLeft">
+        </form> 
+        <br>
+        <button type="button" onclick="personalSubmitForms()">Save</button> 
+        <br>
+        <br>
+    </div>
+  </div>
+</div>
+<div class="jumbotron text-center" style="margin-bottom:0">
+  <p>Footer</p>
+</div>
+
+</body>

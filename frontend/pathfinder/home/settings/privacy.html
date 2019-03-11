@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Home</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+  <link rel="stylesheet" href="./privacy.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+  <script src="https://cdn.plot.ly/plotly-latest.js" charset="utf-8"></script>
+  <style>
+  .fakeimg {
+      height: 200px;
+      background: #fff;
+  }
+  </style>
+</head>
+<body style="background: #eee">
+
+<div class="jumbotron text-center" style="margin-bottom:0; background-image: url(../../../blue_network.jpg); background-size: cover;">
+  <h1 style="color: #eee;">Pathfinder</h1>
+  <p></p> 
+</div>
+
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+  <a class="navbar-brand" href="../../home.html">Home</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="#">Career News</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Social Boards</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Games</a>
+      </li>
+      <li class="nav-item">
+          <a class="nav-link" href="#">About</a>
+      </li>
+    </ul>
+    <ul class="navbar-nav">  
+    <li class="nav-item">
+        <a class="nav-link" href="#">Account</a>
+      </li>
+    </ul>    
+  </div>  
+</nav>
+
+<div class="container" style="margin-top:30px; background: #aaa;">
+  <div class="row">
+    <div class="col-sm-4">
+        <br>
+        <ul class="nav nav-pills flex-column">
+        <li class="nav-item">
+            <button type="button" class="navbarButton" onclick="loadPersonalSettings()">Personal Settings</button>
+        </li>
+        <li class="nav-item"><!--spacing-->
+            <br>
+        </li>
+        <li class="nav-item">
+            <button type="button" class="navbarButton" onclick="loadCareerSettings()">Career Settings</button>
+        </li>
+        <li class="nav-item"><!--spacing-->
+            <br>
+        </li>
+        <li class="nav-item">
+            <button type="button" class="navbarButton" onclick="loadPrivacySettings()">Privacy Settings</button>
+        </li>
+        </ul>
+        <br>
+    </div>
+    <div class="col-sm-8" style="margin-top:30px;">
+        <center><h4>Privacy Settings</h4> </center>
+        <br>
+        <h5>Data Collection and Storage</h5>
+        <hr>
+        <form method="post" id="privacy">
+            <p class="category">Privacy</p>
+            <br>
+            <input type="checkbox" name="optin" value="optin" id="optin"> I consent to my data being stored.<br>
+        </form> 
+        <br>
+        <button type="button" onclick="areYouSure()">Save</button> 
+        <br>
+        <br>
+    </div>
+  </div>
+</div>
+<div class="jumbotron text-center" style="margin-bottom:0">
+  <p>Footer</p>
+</div>
+
+</body>
+<script>
+
+    areYouSure = function() {
+
+        if (document.getElementById("optin").checked == false) {
+    
+            if (confirm("Are you sure?\nYou will not be recommended a career if you opt out.\nHowever, you can still use other features of the site and set your own preferred career.")) {
+                submitForms();
+            } else {
+                alert("Option has not been saved.\n");
+            }
+        } else {
+
+            submitForms();
+
+        }
+
+    }
+
+    submitForms = function() {
+        
+        document.getElementById("privacy").submit();
+
+    }
+
+</script>
+</html>
+

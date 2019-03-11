@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <script src="../../gs/greensock-js/src/minified/TweenMax.min.js"></script> 
+        <script src="../../gs/greensock-js/src/minified/TimelineMax.min.js"></script> 
+    </head>
+    <body>
+    <div style="width: 100%; height: 100%">
+       some text
+       <br>
+       <button type="button" onclick="playAnim()">Animate</button>
+   </div>
+   <div id="slider" style="position: absolute; top: 100%; background-color: grey; height: 100%; width: 100%;">
+   </div>
+    </body>
+</html>
+
+<script>
+
+function playAnim() {
+
+    var timeline = new TimelineMax();
+
+    var slider = document.getElementById("slider");
+
+    timeline.to(slider, 1, {top: "0px"});
+    timeline.to(slider, 1, {top: "100%"});
+    
+
+
+}
+
+</script>   

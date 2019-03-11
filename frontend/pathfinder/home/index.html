@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Home</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../css/home.css">
+  <link rel="stylesheet" href="../css/settings.css">
+  <script src="../../gs/greensock-js/src/minified/TweenMax.min.js"></script>
+  <script src="../../gs/greensock-js/src/minified/TimelineMax.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+  <script src="https://cdn.plot.ly/plotly-latest.js" charset="utf-8"></script>
+  <style>
+  .fakeimg {
+      height: 200px;
+      background: #fff;
+  }
+  </style>
+</head>
+<body style="background: #eee">
+
+<div class="jumbotron text-center" style="margin-bottom:0; background-image: url(../../blue_network.png); background-size: cover;">
+  <h1 style="color: #eee;">Pathfinder</h1>
+  <p></p> 
+</div>
+
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+  <a class="navbar-brand" href="../home">Home</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="#">Career News</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Social Boards</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Games</a>
+      </li>
+      <li class="nav-item">
+          <a class="nav-link" href="#">About</a>
+      </li>
+    </ul>
+    <ul class="navbar-nav">  
+      <li class="nav-item">
+        <button type="button" onclick="loadSettings()" class="navbarButton">Account</a>
+      </li>
+    </ul>    
+  </div>  
+</nav>
+
+<div id="body">
+<div class="container" style="margin-top:30px; background: #aaa;">
+  <div class="row">
+    <div class="col-sm-4">
+      <h2>To Do:</h2>
+      <h5>Progress Chart:</h5>
+      <div class="fakeimg">Progress Image</div>
+      <p>Encouraging text... in culpa qui officia deserunt mollit anim..</p>
+      <h3>Links to incomplete areas</h3>
+      <p>Complete these areas for more accurate results!</p>
+      <ul class="nav nav-pills flex-column">
+        <li class="nav-item">
+          <a class="nav-link active" href="#">Requirement 1</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Requirement 2</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Requirement 3</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" href="#">Complete 1</a>
+        </li>
+      </ul>
+      <hr class="d-sm-none">
+    </div>
+    <div class="col-sm-8">
+      <h2>Primary Recommended Career</h2>
+      <h5>(Career Title), (Date Recommended)</h5>
+      <div class="fakeimg">Career Image</div>
+      <p>Some text describing career..</p>
+      <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+      <br>
+      <h2>Secondary Recommended Career</h2>
+      <h5>(Career Title), (Date Recommended)</h5>
+      <div class="fakeimg">Career Image</div>
+      <p>Some text describing career..</p>
+      <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+    </div>
+  </div>
+</div>
+<div class="barGraph" id="barGraph">
+</div>
+<div class="lineGraph" id="lineGraph">
+</div>
+<div class="jumbotron text-center" style="margin-bottom:0">
+  <p>Footer</p>
+</div>
+</div> <!--end of body div-->
+</body>
+<div id="sliderTop" class="sliderTop">
+</div>
+<div id="sliderLeft" class="sliderLeft">
+</div>
+<div id="sliderRight" class="sliderRight">
+</div>
+<div id="sliderBottom" class="sliderBottom">
+</div>
+<script>
+
+    var timeline = new TimelineMax();
+    //sleep duration 1 (ms). Ensures page is not loaded until animation finishes
+    var duration = 1000; 
+    var duration1 = 1; //anim durations (s)
+    //sleep duration 2 (ms). Gives page enough time to load before 2nd anim starts
+    var duration2 = 1000; 
+
+async function loadSettings() {
+
+      playTransitionStart();
+      await sleep(duration); //wait for anim to finish
+      
+      var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                         document.getElementById("body").innerHTML = this.responseText;
+                }
+        };
+        xhttp.open("GET", "./settings/dataEntry.txt", true);
+        xhttp.send();
+        
+        await sleep(duration2);
+    
+      playTransitionFinish();
+
+}
+async function loadPersonalSettings() {
+
+    playTransitionStart();
+    await sleep(duration);
+    
+    var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                         document.getElementById("body").innerHTML = this.responseText;
+                }
+        };
+
+        xhttp.open("GET", "./settings/personal.txt", true);
+        xhttp.send();
+
+        await sleep(duration2);
+
+        playTransitionFinish();
+
+}
+async function loadCareerSettings() {
+      
+    playTransitionStart();
+    await sleep(duration);
+    
+    var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                         document.getElementById("body").innerHTML = this.responseText;
+                }
+        };
+        xhttp.open("GET", "./settings/career.txt", true);
+        xhttp.send();
+
+        await sleep(duration2);
+
+        playTransitionFinish();
+
+}
+async function loadPrivacySettings() {
+
+    playTransitionStart();
+    await sleep(duration);
+
+    var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                         document.getElementById("body").innerHTML = this.responseText;
+                }
+        };
+        xhttp.open("GET", "./settings/privacy.txt", true);
+        xhttp.send();
+
+        await sleep(duration2);
+
+        playTransitionFinish();
+
+}
+
+async function playTransitionStart() {
+
+    var sliderBot = document.getElementById("sliderBottom");
+    var sliderTop = document.getElementById("sliderTop");
+    var sliderLeft = document.getElementById("sliderLeft");
+    var sliderRight = document.getElementById("sliderRight");
+
+    //sliderBot.style.display = "inline-block";
+    //sliderTop.style.display = "inline-block";
+
+    timeline.to(sliderBottom, duration1, {top: "0"})
+    .to(sliderTop, duration1, {top: "0%"}, "-=1")
+    .to(sliderLeft, duration1, {left: "0%"}, "-=1")
+    .to(sliderRight, duration1, {right: "0%"}, "-=1");
+
+}
+async function playTransitionFinish() {
+
+    var sliderBot = document.getElementById("sliderBottom");
+    var sliderTop = document.getElementById("sliderTop");
+    var sliderLeft = document.getElementById("sliderLeft");
+    var sliderRight = document.getElementById("sliderRight");
+
+    timeline.to(sliderBottom, duration1, {top: "100%"})
+    .to(sliderTop, duration1, {top: "-100%"}, "-=1")
+    .to(sliderLeft, duration1, {left: "-100%"}, "-=1")
+    .to(sliderRight, duration1, {right: "-100%"}, "-=1");
+
+}
+
+function sleep(ms) {
+    return new Promise(resolve =>
+    setTimeout(resolve, ms));
+}
+
+</script>
+<script src="../js/home.js"></script>
+<script src="../js/settings.js"></script>
+</html>
+
